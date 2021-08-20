@@ -25,10 +25,22 @@ function getTotalprice(){
 
     return totalPrice;
 }
-
+    // Counting For PROMO //
 document.getElementById('promo-btn').addEventListener('click',function(){
 
-
+    const PromoField=document.getElementById('promo');
+        const promoText=PromoField.value;
+     if(promoText=="stevekaku"){
+         const currentprice=document.getElementById('totalWith-promo')
+      const totalWithoutpromoCode=getTotalprice();
+        const discount=parseInt(totalWithoutpromoCode)*20/100;
+         currentprice.innerText= totalWithoutpromoCode-discount;
+         console.log(discount);
+         console.log(totalWithoutpromoCode);
+     }
+     else{
+         currentprice.innerText=totalPrice;
+     }
 })
 //   GET PROMOCODE //
 
