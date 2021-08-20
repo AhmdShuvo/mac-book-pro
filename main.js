@@ -25,31 +25,14 @@ function getTotalprice(){
 
     return totalPrice;
 }
-    // Counting For PROMO //
-document.getElementById('promo-btn').addEventListener('click',function(){
+   
+//    GET PROMOCODE //
 
+ function getPromoCode(){
     const PromoField=document.getElementById('promo');
         const promoText=PromoField.value;
-     if(promoText=="stevekaku"){
-         const currentprice=document.getElementById('totalWith-promo')
-      const totalWithoutpromoCode=getTotalprice();
-        const discount=parseInt(totalWithoutpromoCode)*20/100;
-         currentprice.innerText= totalWithoutpromoCode-discount;
-         console.log(discount);
-         console.log(totalWithoutpromoCode);
-     }
-     else{
-         currentprice.innerText=totalPrice;
-     }
-})
-//   GET PROMOCODE //
-
-// function getPromoCode(){
-    
-//    const promoCode=document.getElementById("promo").value;
-//    console.log(promoCode);
-//    return promoCode;
-// };
+   return promoText;
+ };
 
 
     //   8GB RAM BUTTON //
@@ -100,6 +83,23 @@ document.getElementById('delivery-btn-2').addEventListener('click',function(){
     getTotalprice();
    });
 
-//    PROMO CODE BUTTON //
+//    PROMO CODE BUTTON CLICKED //
+ document.getElementById('promo-btn').addEventListener('click',function(){
+     // PROMO CODE BUTTON CLICKED //
+
+    //  Count PROMOCODE //
+    const promoCode=getPromoCode();
+
+    //  CHECK IF CODE IS "stevekaku"//
+     if(promoCode=="stevekaku"){
+         const currentprice=document.getElementById('totalWith-promo')
+      const totalWithoutpromoCode=getTotalprice();
+        const discount=parseInt(totalWithoutpromoCode)*20/100;
+         currentprice.innerText= totalWithoutpromoCode-discount;
+         console.log(discount);
+         console.log(totalWithoutpromoCode);
+     }
+})
+
 
 
