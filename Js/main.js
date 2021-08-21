@@ -6,13 +6,13 @@ function totalCharge(product,isInrese){
         //  CHECK IF BUTTON1 CLICKED //
  if(isInrese){
     //   SET INNERTEXT 0//
-    const bestPrice=document.getElementById(product+'-price').innerText=0;
+    const productPrice=document.getElementById(product+'-price').innerText=0;
  }
 
     // CHECK IF BUTTON2 CLICKED//
  else{
             //   SET INNERTEXT 180//
-    const bestPrice=document.getElementById(product+'-price').innerText=180;
+    const productPrice=document.getElementById(product+'-price').innerText=180;
  }   
     // CALL getTotalprice Function//
      getTotalprice();
